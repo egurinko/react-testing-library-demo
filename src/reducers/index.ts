@@ -1,9 +1,9 @@
-import { combineReducers, Action } from "redux";
-import { Reducer } from "react";
-import isLoading from "./isLoading";
+import { combineReducers, Action } from 'redux';
+import { Reducer } from 'react';
+import isLoading from './isLoading';
 
 const rootReducer = combineReducers({
-  isLoading
+  isLoading,
 });
 
 export default rootReducer;
