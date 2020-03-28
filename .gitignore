@@ -1,0 +1,9 @@
+# Build Result
+/dist/bundle.js
+
+# Ignore modules
+/node_modules
+/yarn-error.log
+
+# Ignore dotenv files
+.env
