@@ -44,10 +44,14 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.7",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.9.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
+    "react-spinners": "^0.8.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   }
