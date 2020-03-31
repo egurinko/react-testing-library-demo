@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { CssBaseline } from '@material-ui/core';
 import NotFound from './components/NotFound';
-import Index from './components/Index';
+import Index from './containers/index';
 import Loader from './containers/common/loader';
 
 const App: React.FC<{}> = () => (
