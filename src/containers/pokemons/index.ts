@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import Index from '../components/Index';
-import { RootThunkAction, RootThunkDispatch } from '../actions/thunks/thunkTypes';
-import { RootState } from '../reducers';
-import { fetchPokemonsThunk } from '../actions/thunks/fetchPokemons';
+import Index from '../../components/pokemons/Index';
+import { RootThunkAction, RootThunkDispatch } from '../../actions/thunks/thunkTypes';
+import { RootState } from '../../reducers';
+import { fetchPokemonsThunk } from '../../actions/thunks/fetchPokemons';
 
 const fetchPokemons = (): RootThunkAction<void> => (dispatch) => {
   dispatch(fetchPokemonsThunk());

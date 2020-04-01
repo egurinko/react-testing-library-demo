@@ -2,17 +2,18 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { CssBaseline } from '@material-ui/core';
 import NotFound from './components/NotFound';
-import Index from './containers/index';
+import Home from './components/Home';
+import PokemonsIndex from './containers/pokemons/index';
 import Loader from './containers/common/loader';
 
 const App: React.FC<{}> = () => (
   <div>
     <CssBaseline />
-    <h1>react-testing-library demo</h1>
     <Loader />
     <Router>
       <Switch>
-        <Route path="/" exact component={Index} />
+        <Route path="/" exact component={Home} />
+        <Route path="/pokemons" exact component={PokemonsIndex} />
         <Route component={NotFound} />
       </Switch>
     </Router>

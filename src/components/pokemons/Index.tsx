@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
-import { IndexPropsMappedFromState, IndexPropsMappedFromDispatch } from '../containers/index';
+import {
+  IndexPropsMappedFromState,
+  IndexPropsMappedFromDispatch,
+} from '../../containers/pokemons/index';
 
 const styles = (theme: Theme): StyleRules => ({
   modal: {
