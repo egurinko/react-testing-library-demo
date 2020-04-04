@@ -4,11 +4,6 @@ import * as H from 'history';
 import Index from '../../components/pokemons/Index';
 import { RootThunkAction, RootThunkDispatch } from '../../actions/thunks/thunkTypes';
 import { RootState } from '../../reducers';
-import { fetchPokemonsThunk } from '../../actions/thunks/fetchPokemons';
-
-const fetchPokemons = (): RootThunkAction<void> => (dispatch) => {
-  dispatch(fetchPokemonsThunk());
-};
 
 const onClickGoDetail = (pokemonId: number, history: H.History): RootThunkAction<void> => () => {
   history.push(`/pokemons/${pokemonId}`);
@@ -19,7 +14,6 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: RootThunkDispatch) => ({
-  fetchPokemons: () => dispatch(fetchPokemons()),
   onClickGoDetail: (pokemonId: number, history: H.History) =>
     dispatch(onClickGoDetail(pokemonId, history)),
 });

@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import { Breadcrumbs, Typography } from '@material-ui/core';
 import { KeyboardArrowRight } from '@material-ui/icons';
-import { ROUTES } from '../../App';
+import { ROUTES } from '../App';
 
 const styles = (theme: Theme): StyleRules => ({
   backIcon: {
