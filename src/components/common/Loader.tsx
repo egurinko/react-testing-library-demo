@@ -33,7 +33,7 @@ const Loader: React.FC<LoaderProps> = ({ isLoading, classes }) => (
     {isLoading ? (
       <div className={classes.modal}>
         <div className={classes.loader}>
-          <BeatLoader size="20" color="hsla(220,40%,45%,1)" />
+          <BeatLoader size="20px" color="hsla(220,40%,45%,1)" />
         </div>
       </div>
     ) : null}
