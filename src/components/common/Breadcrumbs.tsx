@@ -9,8 +9,8 @@ import { ROUTES } from '../App';
 
 const styles = (theme: Theme): StyleRules => ({
   backIcon: {
-    fontSize: 'large',
-    marginTop: theme.spacing(),
+    fontSize: 'x-large',
+    color: theme.palette.primary.main,
   },
   breadcrumb: {
     color: theme.palette.secondary.main,
@@ -76,8 +76,10 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ classes, match }) => {
 
   return (
     <>
-      <Breadcrumbs aria-label="breadcrumb">
-        <KeyboardArrowRight className={classes.backIcon} />
+      <Breadcrumbs
+        separator={<KeyboardArrowRight className={classes.backIcon} />}
+        aria-label="breadcrumb"
+      >
         {breadcrumbs.map((breadcrumb) => {
           return (
             <Link to={breadcrumb.url} className={classes.breadcrumb} key={breadcrumb.url}>
