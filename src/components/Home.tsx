@@ -8,7 +8,6 @@ const styles = (theme: Theme): StyleRules => ({
     paddingTop: 200,
   },
   link: {
-    textDecorationLine: 'none',
     margin: theme.spacing(8),
     color: theme.palette.secondary.main,
   },
