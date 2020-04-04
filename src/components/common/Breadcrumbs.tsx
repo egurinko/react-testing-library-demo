@@ -10,6 +10,7 @@ import { ROUTES } from '../../App';
 const styles = (theme: Theme): StyleRules => ({
   backIcon: {
     fontSize: 'large',
+    marginTop: theme.spacing(),
   },
   breadcrumb: {
     color: theme.palette.secondary.main,
