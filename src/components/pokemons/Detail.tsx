@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
+import { Typography, Grid, Chip } from '@material-ui/core';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import {
   DetailPropsMappedFromState,
@@ -10,8 +11,27 @@ import { Pokemon } from '../../actions/thunks/fetchPokemons';
 
 const styles = (theme: Theme): StyleRules => ({
   container: {},
-  hero: {
-    textAlign: 'center',
+  hero: {},
+  heroImage: {
+    width: 300,
+    margin: theme.spacing(3),
+  },
+  heroCard: {
+    width: 400,
+    height: 300,
+    margin: theme.spacing(3),
+    verticalAlign: 'middle',
+  },
+  heroId: {
+    marginBottom: theme.spacing(2),
+  },
+  heroName: {
+    marginBottom: theme.spacing(3),
+  },
+  heroChip: {
+    marginRight: theme.spacing(2),
+    height: 40,
+    fontSize: theme.typography.h6.fontSize,
   },
 });
 
@@ -23,38 +43,6 @@ type DetailProps = DetailPropsMappedFromState &
   DetailPropsMappedFromDispatch &
   RouteComponentProps<MatchParams> &
   WithStyles<typeof styles>;
-
-const initialPokemon: Pokemon = {
-  abilities: [],
-  base_experience: 0,
-  forms: [],
-  game_indices: [],
-  height: 0,
-  id: 0,
-  is_default: false,
-  held_items: [],
-  location_area_encounters: '',
-  moves: [],
-  name: '',
-  order: 0,
-  species: {
-    name: '',
-    url: '',
-  },
-  sprites: {
-    back_default: '',
-    back_female: '',
-    back_shiny: '',
-    back_shiny_female: '',
-    front_default: '',
-    front_female: '',
-    front_shiny: '',
-    front_shiny_female: '',
-  },
-  stats: [],
-  types: [],
-  weight: 0,
-};
 
 type LocalPokemon = Pokemon | null | undefined;
 
@@ -71,9 +59,29 @@ const Detail: React.FC<DetailProps> = ({ classes, match, pokemons }) => {
     <div className={classes.container}>
       <Breadcrumbs />
       <div>
-        <div className={classes.hero}>
-          <img src={pokemon.sprites.front_default!} />
-        </div>
+        <Grid container justify="center" className={classes.hero}>
+          <img src={pokemon.sprites.front_default!} className={classes.heroImage} />
+          <Grid container direction="column" justify="center" className={classes.heroCard}>
+            <Typography variant="h4" className={classes.heroId}>
+              No. {pokemon.id}
+            </Typography>
+            <Typography variant="h2" className={classes.heroName}>
+              {pokemon.name}
+            </Typography>
+            <div>
+              {pokemon.types.map((type) => {
+                return (
+                  <Chip
+                    size="medium"
+                    label={type.type.name}
+                    key={type.slot}
+                    className={classes.heroChip}
+                  />
+                );
+              })}
+            </div>
+          </Grid>
+        </Grid>
       </div>
       {id}
     </div>

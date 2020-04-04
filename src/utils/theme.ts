@@ -17,7 +17,7 @@ export default createMuiTheme({
     },
     text: {
       primary: 'hsla(45,10%,30%,1)',
-      secondary: 'hsla(40,100%,40%,1)',
+      secondary: 'hsla(43,21%,94%, 01)',
     },
   },
 });
