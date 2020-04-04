@@ -10,16 +10,15 @@ import {
 } from '../../containers/pokemons/index';
 
 const styles = (theme: Theme): StyleRules => ({
+  container: {
+    textAlign: 'center',
+  },
   link: {
     color: theme.palette.secondary.main,
     textAlign: 'left',
   },
   backIcon: {
     fontSize: 'large',
-  },
-  container: {
-    padding: theme.spacing(5),
-    textAlign: 'center',
   },
   card: {
     width: 250,
