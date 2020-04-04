@@ -7,19 +7,21 @@ import {
   DetailPropsMappedFromDispatch,
 } from '../../containers/pokemons/detail';
 import Breadcrumbs from '../common/Breadcrumbs';
-import { Pokemon } from '../../actions/thunks/fetchPokemons';
+import { Pokemon } from '../../actions/thunks/types/fetchPokemons';
 
 const styles = (theme: Theme): StyleRules => ({
   container: {},
-  hero: {},
+  hero: {
+    margin: theme.spacing(3),
+  },
   heroImage: {
     width: 300,
-    margin: theme.spacing(3),
+    margin: `0 ${theme.spacing(3)}px`,
   },
   heroCard: {
     width: 400,
     height: 300,
-    margin: theme.spacing(3),
+    margin: `0 ${theme.spacing(3)}px`,
     verticalAlign: 'middle',
   },
   heroId: {
@@ -28,10 +30,22 @@ const styles = (theme: Theme): StyleRules => ({
   heroName: {
     marginBottom: theme.spacing(3),
   },
-  heroChip: {
+  chip: {
     marginRight: theme.spacing(2),
     height: 40,
     fontSize: theme.typography.h6.fontSize,
+  },
+  detail: {
+    margin: theme.spacing(3),
+  },
+  detailCard: {
+    width: 400,
+    margin: `0 ${theme.spacing(3)}px`,
+    padding: theme.spacing(4),
+    border: `solid 3px ${theme.palette.primary.main}`,
+  },
+  detailSection: {
+    marginBottom: theme.spacing(3),
   },
 });
 
@@ -69,17 +83,45 @@ const Detail: React.FC<DetailProps> = ({ classes, match, pokemons }) => {
               {pokemon.name}
             </Typography>
             <div>
-              {pokemon.types.map((type) => {
-                return (
-                  <Chip
-                    size="medium"
-                    label={type.type.name}
-                    key={type.slot}
-                    className={classes.heroChip}
-                  />
-                );
-              })}
+              {pokemon.types.map((type) => (
+                <Chip
+                  size="medium"
+                  label={type.type.name}
+                  key={type.slot}
+                  className={classes.chip}
+                />
+              ))}
             </div>
+          </Grid>
+        </Grid>
+        <Grid container justify="center" className={classes.detail}>
+          <Grid container direction="column" className={classes.detailCard}>
+            <Typography variant="h5" className={classes.detailSection}>
+              Height : {pokemon.height}
+            </Typography>
+            <Typography variant="h5" className={classes.detailSection}>
+              Weight : {pokemon.weight}
+            </Typography>
+            <div className={classes.detailSection}>
+              <Typography variant="h5" className={classes.detailSection}>
+                Abilities :
+              </Typography>
+              {pokemon.abilities.map((ability, index) => (
+                <Chip
+                  size="medium"
+                  label={ability.ability.name}
+                  key={`ability-${index}`}
+                  className={classes.chip}
+                />
+              ))}
+            </div>
+          </Grid>
+          <Grid container direction="column" className={classes.detailCard}>
+            {pokemon.stats.map((stat) => (
+              <Typography variant="h5" className={classes.detailSection} key={stat.stat.name}>
+                {stat.stat.name} : {stat.base_stat}
+              </Typography>
+            ))}
           </Grid>
         </Grid>
       </div>
