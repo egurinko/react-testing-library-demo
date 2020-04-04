@@ -44,9 +44,10 @@ const styles = (theme: Theme): StyleRules => ({
   detailSection: {
     marginBottom: theme.spacing(3),
   },
-  addButton: {
-    width: 300,
+  button: {
+    width: 400,
     height: 60,
+    margin: theme.spacing(2),
   },
 });
 
@@ -61,14 +62,30 @@ type DetailProps = DetailPropsMappedFromState &
 
 type LocalPokemon = Pokemon | null | undefined;
 
-const Detail: React.FC<DetailProps> = ({ classes, match, pokemons, myPokemons, addPokemon }) => {
-  const { id } = match.params;
-
+const Detail: React.FC<DetailProps> = ({
+  classes,
+  match,
+  pokemons,
+  myPokemons,
+  addPokemon,
+  deletePokemon,
+}) => {
   const [pokemon, setPokemon] = useState<LocalPokemon>(null);
   useEffect(() => {
+    const { id } = match.params;
     const pokemon = pokemons.find((pokemon) => pokemon.id === Number(id));
     setPokemon(pokemon);
   }, [match, pokemons]);
+
+  const [isDeletable, setIsDeletable] = useState(true);
+
+  useEffect(() => {
+    setIsDeletable(getIsDeletable());
+  }, [match, myPokemons]);
+
+  const getIsDeletable = (): boolean => {
+    return !!myPokemons.find((myPokemon) => myPokemon.id === pokemon?.id);
+  };
 
   return !!pokemon ? (
     <div className={classes.container}>
@@ -128,9 +145,18 @@ const Detail: React.FC<DetailProps> = ({ classes, match, pokemons, myPokemons, a
             <Button
               color="primary"
               variant="contained"
+              onClick={() => deletePokemon(pokemon)}
+              disabled={!isDeletable}
+              className={classes.button}
+            >
+              <Typography variant="h5">Delete from My Pokemons</Typography>
+            </Button>
+            <Button
+              color="secondary"
+              variant="contained"
               onClick={() => addPokemon(pokemon)}
               disabled={myPokemons.length >= 6}
-              className={classes.addButton}
+              className={classes.button}
             >
               <Typography variant="h5">Add To My Pokemons</Typography>
             </Button>

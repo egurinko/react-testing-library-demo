@@ -23,8 +23,15 @@ export const addPokemon = (pokemon: Pokemon) =>
     pokemon,
   } as const);
 
+export const deletePokemon = (pokemon: Pokemon) =>
+  ({
+    type: ActionTypes.DELETE_POKEMON,
+    pokemon,
+  } as const);
+
 export type Actions =
   | ReturnType<typeof fetchPokemonsStart>
   | ReturnType<typeof fetchPokemonsSuccess>
   | ReturnType<typeof fetchPokemonsFailure>
-  | ReturnType<typeof addPokemon>;
+  | ReturnType<typeof addPokemon>
+  | ReturnType<typeof deletePokemon>;

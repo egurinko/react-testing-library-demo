@@ -4,7 +4,7 @@ import Detail from '../../components/pokemons/Detail';
 import { RootThunkAction, RootThunkDispatch } from '../../actions/thunks/thunkTypes';
 import { RootState } from '../../reducers';
 import { Pokemon } from '../../actions/thunks/types/fetchPokemons';
-import { addPokemon } from '../../actions/index';
+import { addPokemon, deletePokemon } from '../../actions/index';
 
 const mapStateToProps = (state: RootState) => ({
   pokemons: state.pokemons,
@@ -13,6 +13,7 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps = (dispatch: RootThunkDispatch) => ({
   addPokemon: (pokemon: Pokemon) => dispatch(addPokemon(pokemon)),
+  deletePokemon: (pokemon: Pokemon) => dispatch(deletePokemon(pokemon)),
 });
 
 export type DetailPropsMappedFromState = ReturnType<typeof mapStateToProps>;
