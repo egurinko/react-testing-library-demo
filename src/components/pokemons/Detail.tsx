@@ -5,6 +5,7 @@ import {
   DetailPropsMappedFromState,
   DetailPropsMappedFromDispatch,
 } from '../../containers/pokemons/detail';
+import Breadcrumbs from '../common/Breadcrumbs';
 
 const styles = (theme: Theme): StyleRules => ({
   container: {
@@ -23,7 +24,12 @@ type DetailProps = DetailPropsMappedFromState &
 
 const Detail: React.FC<DetailProps> = ({ classes, match }) => {
   const { id } = match.params;
-  return <div className={classes.container}>{id}</div>;
+  return (
+    <div className={classes.container}>
+      <Breadcrumbs />
+      {id}
+    </div>
+  );
 };
 
 export default withStyles(styles)(Detail);

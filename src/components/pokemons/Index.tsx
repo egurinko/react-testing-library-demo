@@ -2,23 +2,15 @@ import React, { useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import { Card, CardActionArea, CardContent, Typography, Grid } from '@material-ui/core';
-import { KeyboardArrowRight } from '@material-ui/icons';
-import { Link } from 'react-router-dom';
 import {
   IndexPropsMappedFromState,
   IndexPropsMappedFromDispatch,
 } from '../../containers/pokemons/index';
+import Breadcrumbs from '../common/Breadcrumbs';
 
 const styles = (theme: Theme): StyleRules => ({
   container: {
     textAlign: 'center',
-  },
-  link: {
-    color: theme.palette.secondary.main,
-    textAlign: 'left',
-  },
-  backIcon: {
-    fontSize: 'large',
   },
   card: {
     width: 250,
@@ -47,12 +39,7 @@ const Index: React.FC<IndexProps> = ({
 
   return (
     <div className={classes.container}>
-      <Link to="/" className={classes.link}>
-        <Typography variant="h6">
-          <KeyboardArrowRight className={classes.backIcon} />
-          Back to Home
-        </Typography>
-      </Link>
+      <Breadcrumbs />
       <Typography variant="h4">Pokedex</Typography>
       <Grid container>
         {pokemons.map((pokemon) => {
