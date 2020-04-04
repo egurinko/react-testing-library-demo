@@ -6,6 +6,7 @@ import NotFound from './NotFound';
 import Home from './Home';
 import PokemonsIndex from '../containers/pokemons/index';
 import PokemonsDetail from '../containers/pokemons/detail';
+import MyPokemonsIndex from '../containers/my_pokemons/index';
 import Loader from '../containers/common/loader';
 import { AppPropsMappedFromState, AppPropsMappedFromDispatch } from '../containers/app';
 
@@ -21,6 +22,7 @@ export const ROUTES = {
   Home: '/',
   Pokedex: '/pokemons',
   POKEMON_DETAIL: '/pokemons/:id',
+  My_Pokemons: '/my_pokemons',
 };
 
 const App: React.FC<AppProps> = ({ fetchPokemons, classes }) => {
@@ -38,6 +40,7 @@ const App: React.FC<AppProps> = ({ fetchPokemons, classes }) => {
             <Route path={ROUTES.Home} exact component={Home} />
             <Route path={ROUTES.Pokedex} exact component={PokemonsIndex} />
             <Route path={ROUTES.POKEMON_DETAIL} exact component={PokemonsDetail} />
+            <Route path={ROUTES.My_Pokemons} exact component={MyPokemonsIndex} />
             <Route component={NotFound} />
           </Switch>
         </Router>
