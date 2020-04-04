@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import { Grid, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { ROUTES } from './App';
 
 const styles = (theme: Theme): StyleRules => ({
   homeRoot: {
@@ -27,10 +28,10 @@ const Home: React.FC<HomeProps> = ({ classes }) => (
       <Typography variant="h1">Welcome to Pokemon world!</Typography>
     </Grid>
     <Grid item container justify="center">
-      <Link to="/pokemons" className={classes.link}>
+      <Link to={ROUTES.Pokedex} className={classes.link}>
         <Typography variant="h4">Pokedex</Typography>
       </Link>
-      <Link to="/my-pokemons" className={classes.link}>
+      <Link to={ROUTES.My_Pokemons} className={classes.link}>
         <Typography variant="h4">My Pokemons</Typography>
       </Link>
     </Grid>
