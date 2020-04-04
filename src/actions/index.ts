@@ -1,5 +1,5 @@
 import { ActionTypes } from './actionTypes';
-import { Pokemons } from './thunks/types/fetchPokemons';
+import { Pokemons, Pokemon } from './thunks/types/fetchPokemons';
 
 export const fetchPokemonsStart = () =>
   ({
@@ -17,7 +17,14 @@ export const fetchPokemonsFailure = () =>
     type: ActionTypes.FETCH_POKEMONS_FAILURE,
   } as const);
 
+export const addPokemon = (pokemon: Pokemon) =>
+  ({
+    type: ActionTypes.ADD_POKEMON,
+    pokemon,
+  } as const);
+
 export type Actions =
   | ReturnType<typeof fetchPokemonsStart>
   | ReturnType<typeof fetchPokemonsSuccess>
-  | ReturnType<typeof fetchPokemonsFailure>;
+  | ReturnType<typeof fetchPokemonsFailure>
+  | ReturnType<typeof addPokemon>;
