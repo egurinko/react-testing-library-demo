@@ -1,5 +1,5 @@
 import { ActionTypes } from './actionTypes';
-import { Pokemons } from './thunks/fetchPokemons';
+import { Pokemons } from './thunks/types/fetchPokemons';
 
 export const fetchPokemonsStart = () =>
   ({
