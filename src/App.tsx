@@ -16,6 +16,12 @@ const styles = (theme: Theme): StyleRules => ({
 
 type AppProps = WithStyles<typeof styles>;
 
+export const ROUTES = {
+  Home: '/',
+  Pokedex: '/pokemons',
+  POKEMON_DETAIL: '/pokemons/:id',
+};
+
 const App: React.FC<AppProps> = ({ classes }) => (
   <div>
     <CssBaseline />
@@ -23,9 +29,9 @@ const App: React.FC<AppProps> = ({ classes }) => (
     <div className={classes.appContainer}>
       <Router>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/pokemons" exact component={PokemonsIndex} />
-          <Route path="/pokemons/:id" exact component={PokemonsDetail} />
+          <Route path={ROUTES.Home} exact component={Home} />
+          <Route path={ROUTES.Pokedex} exact component={PokemonsIndex} />
+          <Route path={ROUTES.POKEMON_DETAIL} exact component={PokemonsDetail} />
           <Route component={NotFound} />
         </Switch>
       </Router>
