@@ -8,6 +8,7 @@ import PokemonsIndex from '../containers/pokemons/index';
 import PokemonsDetail from '../containers/pokemons/detail';
 import MyPokemonsIndex from '../containers/my_pokemons/index';
 import Loader from '../containers/common/loader';
+import Snackbar from './common/Snackbar';
 import { AppPropsMappedFromState, AppPropsMappedFromDispatch } from '../containers/app';
 
 const styles = (theme: Theme): StyleRules => ({
@@ -25,7 +26,7 @@ export const ROUTES = {
   My_Pokemons: '/my_pokemons',
 };
 
-const App: React.FC<AppProps> = ({ fetchPokemons, classes }) => {
+const App: React.FC<AppProps> = ({ fetchPokemons, snackbar, handleSnackbarClose, classes }) => {
   useEffect(() => {
     fetchPokemons();
   }, []);
@@ -34,6 +35,7 @@ const App: React.FC<AppProps> = ({ fetchPokemons, classes }) => {
     <div>
       <CssBaseline />
       <Loader />
+      <Snackbar snackbar={snackbar} handleClose={handleSnackbarClose} />
       <div className={classes.appContainer}>
         <Router>
           <Switch>

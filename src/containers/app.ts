@@ -3,15 +3,19 @@ import App from '../components/App';
 import { RootThunkAction, RootThunkDispatch } from '../actions/thunks/thunkTypes';
 import { RootState } from '../reducers';
 import { fetchPokemonsThunk } from '../actions/thunks/fetchPokemons';
+import { closeSnackbar } from '../actions/index';
 
 const fetchPokemons = (): RootThunkAction<void> => (dispatch) => {
   dispatch(fetchPokemonsThunk());
 };
 
-const mapStateToProps = (state: RootState) => ({});
+const mapStateToProps = (state: RootState) => ({
+  snackbar: state.snackbar,
+});
 
 const mapDispatchToProps = (dispatch: RootThunkDispatch) => ({
   fetchPokemons: () => dispatch(fetchPokemons()),
+  handleSnackbarClose: () => dispatch(closeSnackbar()),
 });
 
 export type AppPropsMappedFromState = ReturnType<typeof mapStateToProps>;

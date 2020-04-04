@@ -29,9 +29,15 @@ export const deletePokemon = (pokemon: Pokemon) =>
     pokemon,
   } as const);
 
+export const closeSnackbar = () =>
+  ({
+    type: ActionTypes.CLOSE_SNACKBAR,
+  } as const);
+
 export type Actions =
   | ReturnType<typeof fetchPokemonsStart>
   | ReturnType<typeof fetchPokemonsSuccess>
   | ReturnType<typeof fetchPokemonsFailure>
   | ReturnType<typeof addPokemon>
-  | ReturnType<typeof deletePokemon>;
+  | ReturnType<typeof deletePokemon>
+  | ReturnType<typeof closeSnackbar>;

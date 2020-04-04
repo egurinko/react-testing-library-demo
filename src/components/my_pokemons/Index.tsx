@@ -19,6 +19,13 @@ const styles = (theme: Theme): StyleRules => ({
     fontSize: 50,
     margin: theme.spacing(5),
   },
+  card: {
+    width: 250,
+    margin: theme.spacing(3),
+  },
+  image: {
+    width: '100%',
+  },
 });
 
 type IndexProps = IndexPropsMappedFromState &
@@ -31,7 +38,7 @@ const Index: React.FC<IndexProps> = ({ myPokemons, classes }) => (
     <Typography variant="h4">My Pokemons</Typography>
     <Grid container justify="center" className={classes.cards}>
       {myPokemons.length === 0 ? (
-        <Grid item xs={12} className={classes.card}>
+        <Grid item xs={12}>
           <NotificationImportant className={classes.notification} />
           <Typography variant="h4">Please add pokemons !</Typography>
         </Grid>

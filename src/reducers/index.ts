@@ -3,11 +3,13 @@ import { Reducer } from 'react';
 import isLoading from './isLoading';
 import pokemons from './pokemons';
 import myPokemons from './myPokemons';
+import snackbar from './snackbar';
 
 const rootReducer = combineReducers({
   isLoading,
   pokemons,
   myPokemons,
+  snackbar,
 });
 
 export default rootReducer;
