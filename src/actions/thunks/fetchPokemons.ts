@@ -89,7 +89,7 @@ type Type = {
 export const fetchPokemonsThunk = (): RootThunkAction<Promise<void>> => (dispatch) => {
   const fetchers = [];
 
-  for (let i = 1; i < 21; i++) {
+  for (let i = 1; i < 31; i++) {
     fetchers.push(fetcher<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${i}`));
   }
 

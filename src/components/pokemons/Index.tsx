@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { RouteComponentProps } from 'react-router';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import { Card, CardActionArea, CardContent, Typography, Grid } from '@material-ui/core';
 import { KeyboardArrowRight } from '@material-ui/icons';
@@ -31,9 +32,16 @@ const styles = (theme: Theme): StyleRules => ({
 
 type IndexProps = IndexPropsMappedFromState &
   IndexPropsMappedFromDispatch &
+  RouteComponentProps<{}> &
   WithStyles<typeof styles>;
 
-const Index: React.FC<IndexProps> = ({ fetchPokemons, pokemons, classes }) => {
+const Index: React.FC<IndexProps> = ({
+  fetchPokemons,
+  pokemons,
+  onClickGoDetail,
+  classes,
+  history,
+}) => {
   useEffect(() => {
     fetchPokemons();
   }, []);
@@ -52,7 +60,7 @@ const Index: React.FC<IndexProps> = ({ fetchPokemons, pokemons, classes }) => {
           return (
             <Grid item className={classes.card} key={pokemon.name}>
               <Card>
-                <CardActionArea>
+                <CardActionArea onClick={() => onClickGoDetail(pokemon.id, history)}>
                   <img className={classes.image} src={pokemon.sprites.front_default!} />
                   <CardContent>
                     <Typography variant="h5">{pokemon.name}</Typography>

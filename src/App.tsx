@@ -4,6 +4,7 @@ import { CssBaseline } from '@material-ui/core';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
 import PokemonsIndex from './containers/pokemons/index';
+import PokemonsDetail from './containers/pokemons/detail';
 import Loader from './containers/common/loader';
 
 const App: React.FC<{}> = () => (
@@ -14,6 +15,7 @@ const App: React.FC<{}> = () => (
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/pokemons" exact component={PokemonsIndex} />
+        <Route path="/pokemons/:id" exact component={PokemonsDetail} />
         <Route component={NotFound} />
       </Switch>
     </Router>
