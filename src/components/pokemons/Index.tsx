@@ -1,25 +1,25 @@
 import React, { useEffect } from 'react';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import {
+  Paper,
+  TableRow,
+  TableHead,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+} from '@material-ui/core';
+import {
   IndexPropsMappedFromState,
   IndexPropsMappedFromDispatch,
 } from '../../containers/pokemons/index';
 
 const styles = (theme: Theme): StyleRules => ({
-  modal: {
-    position: 'fixed',
-    zIndex: 1500,
-    top: 0,
-    left: 0,
-    height: '100%',
-    width: '100%',
-    background: 'rgba(0, 0, 0, .3)',
+  container: {
+    padding: theme.spacing(5),
   },
-  loader: {
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+  table: {
+    minWidth: 650,
   },
 });
 
@@ -33,8 +33,27 @@ const Index: React.FC<IndexProps> = ({ fetchPokemons, pokemons, classes }) => {
   }, []);
 
   return (
-    <div>
-      <h1>Index</h1>
+    <div className={classes.container}>
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>No.</TableCell>
+              <TableCell align="right">Name</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {pokemons.map((pokemon, index) => (
+              <TableRow key={pokemon.name}>
+                <TableCell component="th" scope="row">
+                  {index + 1}
+                </TableCell>
+                <TableCell align="right">{pokemon.name}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 };

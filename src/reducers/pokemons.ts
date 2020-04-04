@@ -1,8 +1,10 @@
 import { Actions } from '../actions/index';
 import { ActionTypes } from '../actions/actionTypes';
-import { Pokemon } from '../actions/thunks/fetchPokemons';
+import { Pokemons } from '../actions/thunks/fetchPokemons';
 
-const pokemons = (state = [], action: Actions): Pokemon[] => {
+const initialState: Pokemons = [];
+
+const pokemons = (state = initialState, action: Actions): Pokemons => {
   switch (action.type) {
     case ActionTypes.FETCH_POKEMONS_SUCCESS:
       return action.pokemons;

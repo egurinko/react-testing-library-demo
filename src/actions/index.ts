@@ -1,12 +1,12 @@
 import { ActionTypes } from './actionTypes';
-import { Pokemon } from './thunks/fetchPokemons';
+import { Pokemons } from './thunks/fetchPokemons';
 
 export const fetchPokemonsStart = () =>
   ({
     type: ActionTypes.FETCH_POKEMONS_START,
   } as const);
 
-export const fetchPokemonsSuccess = (pokemons: Pokemon[]) =>
+export const fetchPokemonsSuccess = (pokemons: Pokemons) =>
   ({
     type: ActionTypes.FETCH_POKEMONS_SUCCESS,
     pokemons,
