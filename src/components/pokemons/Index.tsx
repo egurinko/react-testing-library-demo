@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import { Card, CardActionArea, CardContent, Typography, Grid } from '@material-ui/core';

@@ -6,6 +6,7 @@ import {
   DetailPropsMappedFromState,
   DetailPropsMappedFromDispatch,
 } from '../../containers/pokemons/detail';
+import Empty from './detail/Empty';
 import Breadcrumbs from '../common/Breadcrumbs';
 import { Pokemon } from '../../actions/thunks/types/fetchPokemons';
 
@@ -37,7 +38,7 @@ const styles = (theme: Theme): StyleRules => ({
   },
   detailCard: {
     width: 400,
-    margin: `0 ${theme.spacing(3)}px`,
+    margin: theme.spacing(3),
     padding: theme.spacing(4),
     border: `solid 3px ${theme.palette.primary.main}`,
   },
@@ -92,25 +93,7 @@ const Detail: React.FC<DetailProps> = ({
       <Breadcrumbs />
       <div>
         <Grid container justify="center" className={classes.section}>
-          <img src={pokemon.sprites.front_default!} className={classes.heroImage} />
-          <Grid container direction="column" justify="center" className={classes.heroCard}>
-            <Typography variant="h4" className={classes.heroId}>
-              No. {pokemon.id}
-            </Typography>
-            <Typography variant="h2" className={classes.heroName}>
-              {pokemon.name}
-            </Typography>
-            <div>
-              {pokemon.types.map((type) => (
-                <Chip
-                  size="medium"
-                  label={type.type.name}
-                  key={type.slot}
-                  className={classes.chip}
-                />
-              ))}
-            </div>
-          </Grid>
+          <Empty pokemon={pokemon} />
         </Grid>
         <Grid container justify="center" className={classes.section}>
           <Grid container direction="column" className={classes.detailCard}>
