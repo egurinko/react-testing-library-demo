@@ -46,7 +46,7 @@ const Index: React.FC<IndexProps> = ({ myPokemons, classes }) => (
             <Grid item className={classes.card} key={pokemon.name}>
               <Card>
                 <CardActionArea>
-                  <img className={classes.image} src={pokemon.sprites.front_default!} />
+                  <img className={classes.image} src={pokemon.sprite!} />
                   <CardContent>
                     <Typography variant="h5">{pokemon.name}</Typography>
                   </CardContent>

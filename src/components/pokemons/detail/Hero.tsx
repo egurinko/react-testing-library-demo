@@ -35,7 +35,7 @@ type HeroProps = OwnProps & WithStyles<typeof styles>;
 
 const Hero: React.FC<HeroProps> = ({ classes, pokemon }) => (
   <>
-    <img src={pokemon.sprites.front_default!} className={classes.heroImage} />
+    <img src={pokemon.sprite!} className={classes.heroImage} />
     <Grid container direction="column" justify="center" className={classes.heroCard}>
       <Typography variant="h4" className={classes.heroId}>
         No. {pokemon.id}

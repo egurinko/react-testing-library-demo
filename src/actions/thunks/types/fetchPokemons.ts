@@ -4,7 +4,7 @@ export type Pokemon = {
   id: number;
   name: string;
   stats: Stat[];
-  sprites: Sprites;
+  sprite: Sprite;
 };
 
 export type FullPokemons = FullPokemon[];

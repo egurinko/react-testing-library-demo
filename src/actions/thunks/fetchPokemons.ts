@@ -17,7 +17,7 @@ export const fetchPokemonsThunk = (): RootThunkAction<Promise<void>> => (dispatc
         id: fullPokemon.id,
         name: fullPokemon.name,
         stats: fullPokemon.stats,
-        sprites: fullPokemon.sprites,
+        sprite: fullPokemon.sprites.front_default,
       }));
       dispatch(fetchPokemonsSuccess(pokemons));
     })
