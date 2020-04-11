@@ -31,9 +31,9 @@ type OwnProps = {
   pokemon: Pokemon;
 };
 
-type EmptyProps = OwnProps & WithStyles<typeof styles>;
+type HeroProps = OwnProps & WithStyles<typeof styles>;
 
-const Empty: React.FC<EmptyProps> = ({ classes, pokemon }) => (
+const Hero: React.FC<HeroProps> = ({ classes, pokemon }) => (
   <>
     <img src={pokemon.sprites.front_default!} className={classes.heroImage} />
     <Grid container direction="column" justify="center" className={classes.heroCard}>
@@ -43,13 +43,8 @@ const Empty: React.FC<EmptyProps> = ({ classes, pokemon }) => (
       <Typography variant="h2" className={classes.heroName}>
         {pokemon.name}
       </Typography>
-      <div>
-        {pokemon.types.map((type) => (
-          <Chip size="medium" label={type.type.name} key={type.slot} className={classes.chip} />
-        ))}
-      </div>
     </Grid>
   </>
 );
 
-export default withStyles(styles)(Empty);
+export default withStyles(styles)(Hero);

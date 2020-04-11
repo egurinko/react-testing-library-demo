@@ -6,35 +6,12 @@ import {
   DetailPropsMappedFromState,
   DetailPropsMappedFromDispatch,
 } from '../../containers/pokemons/detail';
-import Empty from './detail/Empty';
-import Breadcrumbs from '../common/Breadcrumbs';
+import Hero from './detail/Hero';
 import { Pokemon } from '../../actions/thunks/types/fetchPokemons';
 
 const styles = (theme: Theme): StyleRules => ({
-  container: {},
   section: {
     margin: theme.spacing(3),
-  },
-  heroImage: {
-    width: 300,
-    margin: `0 ${theme.spacing(3)}px`,
-  },
-  heroCard: {
-    width: 400,
-    height: 300,
-    margin: `0 ${theme.spacing(3)}px`,
-    verticalAlign: 'middle',
-  },
-  heroId: {
-    marginBottom: theme.spacing(2),
-  },
-  heroName: {
-    marginBottom: theme.spacing(3),
-  },
-  chip: {
-    marginRight: theme.spacing(2),
-    height: 40,
-    fontSize: theme.typography.h6.fontSize,
   },
   detailCard: {
     width: 400,
@@ -44,6 +21,11 @@ const styles = (theme: Theme): StyleRules => ({
   },
   detailSection: {
     marginBottom: theme.spacing(3),
+  },
+  chip: {
+    marginRight: theme.spacing(2),
+    height: 40,
+    fontSize: theme.typography.h6.fontSize,
   },
   button: {
     width: 400,
@@ -90,62 +72,39 @@ const Detail: React.FC<DetailProps> = ({
 
   return !!pokemon ? (
     <div className={classes.container}>
-      <Breadcrumbs />
-      <div>
-        <Grid container justify="center" className={classes.section}>
-          <Empty pokemon={pokemon} />
-        </Grid>
-        <Grid container justify="center" className={classes.section}>
-          <Grid container direction="column" className={classes.detailCard}>
-            <Typography variant="h5" className={classes.detailSection}>
-              Height : {pokemon.height}
+      <Grid container justify="center" className={classes.section}>
+        <Hero pokemon={pokemon} />
+      </Grid>
+      <Grid container justify="center" className={classes.section}>
+        <Grid container direction="column" className={classes.detailCard}>
+          {pokemon.stats.map((stat) => (
+            <Typography variant="h6" className={classes.detailSection} key={stat.stat.name}>
+              {stat.stat.name} : {stat.base_stat}
             </Typography>
-            <Typography variant="h5" className={classes.detailSection}>
-              Weight : {pokemon.weight}
-            </Typography>
-            <div className={classes.detailSection}>
-              <Typography variant="h5" className={classes.detailSection}>
-                Abilities :
-              </Typography>
-              {pokemon.abilities.map((ability, index) => (
-                <Chip
-                  size="medium"
-                  label={ability.ability.name}
-                  key={`ability-${index}`}
-                  className={classes.chip}
-                />
-              ))}
-            </div>
-          </Grid>
-          <Grid container direction="column" className={classes.detailCard}>
-            {pokemon.stats.map((stat) => (
-              <Typography variant="h6" className={classes.detailSection} key={stat.stat.name}>
-                {stat.stat.name} : {stat.base_stat}
-              </Typography>
-            ))}
-          </Grid>
-          <Grid item xs={12} container justify="center" className={classes.section}>
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={() => deletePokemon(pokemon)}
-              disabled={!isDeletable}
-              className={classes.button}
-            >
-              <Typography variant="h5">Delete from My Pokemons</Typography>
-            </Button>
-            <Button
-              color="secondary"
-              variant="contained"
-              onClick={() => addPokemon(pokemon)}
-              disabled={myPokemons.length >= 6}
-              className={classes.button}
-            >
-              <Typography variant="h5">Add To My Pokemons</Typography>
-            </Button>
-          </Grid>
+          ))}
         </Grid>
-      </div>
+      </Grid>
+
+      <Grid item xs={12} container justify="center" className={classes.section}>
+        <Button
+          color="primary"
+          variant="contained"
+          onClick={() => deletePokemon(pokemon)}
+          disabled={!isDeletable}
+          className={classes.button}
+        >
+          <Typography variant="h5">Delete from My Pokemons</Typography>
+        </Button>
+        <Button
+          color="secondary"
+          variant="contained"
+          onClick={() => addPokemon(pokemon)}
+          disabled={myPokemons.length >= 6}
+          className={classes.button}
+        >
+          <Typography variant="h5">Add To My Pokemons</Typography>
+        </Button>
+      </Grid>
     </div>
   ) : null;
 };

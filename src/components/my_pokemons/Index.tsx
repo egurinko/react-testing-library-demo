@@ -6,7 +6,6 @@ import {
   IndexPropsMappedFromState,
   IndexPropsMappedFromDispatch,
 } from '../../containers/my_pokemons/index';
-import Breadcrumbs from '../common/Breadcrumbs';
 
 const styles = (theme: Theme): StyleRules => ({
   container: {
@@ -34,7 +33,6 @@ type IndexProps = IndexPropsMappedFromState &
 
 const Index: React.FC<IndexProps> = ({ myPokemons, classes }) => (
   <div className={classes.container}>
-    <Breadcrumbs />
     <Typography variant="h4">My Pokemons</Typography>
     <Grid container justify="center" className={classes.cards}>
       {myPokemons.length === 0 ? (

@@ -6,7 +6,6 @@ import {
   IndexPropsMappedFromState,
   IndexPropsMappedFromDispatch,
 } from '../../containers/pokemons/index';
-import Breadcrumbs from '../common/Breadcrumbs';
 
 const styles = (theme: Theme): StyleRules => ({
   container: {
@@ -28,7 +27,6 @@ type IndexProps = IndexPropsMappedFromState &
 
 const Index: React.FC<IndexProps> = ({ pokemons, onClickGoDetail, classes, history }) => (
   <div className={classes.container}>
-    <Breadcrumbs />
     <Typography variant="h4">Pokedex</Typography>
     <Grid container>
       {pokemons.map((pokemon) => {
