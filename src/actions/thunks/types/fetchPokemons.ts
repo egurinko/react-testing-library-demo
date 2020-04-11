@@ -1,6 +1,15 @@
 export type Pokemons = Pokemon[];
 
 export type Pokemon = {
+  id: number;
+  name: string;
+  stats: Stat[];
+  sprites: Sprites;
+};
+
+export type FullPokemons = FullPokemon[];
+
+export type FullPokemon = {
   abilities: Ability[];
   base_experience: number;
   forms: Detail[];
