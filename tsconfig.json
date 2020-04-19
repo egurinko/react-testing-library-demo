@@ -33,8 +33,7 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "skipLibCheck": true,
-    "typeRoots": ["./node_modules/@types"],
-    "types": ["jest"]
+    "typeRoots": ["./node_modules/@types"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
