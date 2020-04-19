@@ -5,4 +5,4 @@ export const ActionTypes = {
   ADD_POKEMON: 'ADD_POKEMON',
   DELETE_POKEMON: 'DELETE_POKEMON',
   CLOSE_SNACKBAR: 'CLOSE_SNACKBAR',
-};
+} as const;

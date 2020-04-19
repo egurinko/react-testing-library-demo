@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Detail from '../../components/pokemons/Detail';
-import { RootThunkAction, RootThunkDispatch } from '../../actions/thunks/thunkTypes';
+import { RootThunkDispatch } from '../../actions/thunks/thunkTypes';
 import { RootState } from '../../reducers';
 import { Pokemon } from '../../actions/thunks/types/fetchPokemons';
 import { addPokemon, deletePokemon } from '../../actions/index';

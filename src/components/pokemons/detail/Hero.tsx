@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Grid, Chip } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import { Pokemon } from '../../../actions/thunks/types/fetchPokemons';
 

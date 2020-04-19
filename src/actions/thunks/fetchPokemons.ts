@@ -21,7 +21,7 @@ export const fetchPokemonsThunk = (): RootThunkAction<Promise<void>> => (dispatc
       }));
       dispatch(fetchPokemonsSuccess(pokemons));
     })
-    .catch((error) => {
+    .catch(() => {
       dispatch(fetchPokemonsFailure());
     });
 };

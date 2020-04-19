@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router';
-import { Typography, Grid, Chip, Button } from '@material-ui/core';
+import { Typography, Grid, Button } from '@material-ui/core';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import {
   DetailPropsMappedFromState,

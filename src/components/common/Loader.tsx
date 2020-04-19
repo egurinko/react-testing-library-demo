@@ -1,12 +1,12 @@
 import React from 'react';
-import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
+import { withStyles, WithStyles, StyleRules } from '@material-ui/core/styles';
 import { BeatLoader } from 'react-spinners';
 import {
   LoaderPropsMappedFromState,
   LoaderPropsMappedFromDispatch,
 } from '../../containers/common/loader';
 
-const styles = (theme: Theme): StyleRules => ({
+const styles = (): StyleRules => ({
   modal: {
     position: 'fixed',
     zIndex: 1500,

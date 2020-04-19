@@ -24,6 +24,7 @@ const styles = (theme: Theme): StyleRules => ({
   },
   image: {
     width: '100%',
+    backgroundColor: theme.palette.primary.main,
   },
 });
 
