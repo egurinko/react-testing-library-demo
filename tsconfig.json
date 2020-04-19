@@ -19,13 +19,7 @@
     // use typescript to transpile jsx to js
     "jsx": "react",
     "baseUrl": "./src",
-    "lib": [
-      "es2015",
-      "dom.iterable",
-      "es2016.array.include",
-      "es2017.object",
-      "dom"
-    ],
+    "lib": ["es2015", "dom.iterable", "es2016.array.include", "es2017.object", "dom"],
     "module": "es6",
     "removeComments": true,
     "alwaysStrict": true,
@@ -37,6 +31,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-    "importHelpers": true
-  }
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["jest"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
