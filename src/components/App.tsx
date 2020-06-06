@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import NotFound from './NotFound';
@@ -37,15 +37,13 @@ const App: React.FC<AppProps> = ({ fetchPokemons, snackbar, handleSnackbarClose,
       <Loader />
       <Snackbar snackbar={snackbar} handleClose={handleSnackbarClose} />
       <div className={classes.appContainer}>
-        <Router>
-          <Switch>
-            <Route path={ROUTES.Home} exact component={Home} />
-            <Route path={ROUTES.Pokedex} exact component={PokemonsIndex} />
-            <Route path={ROUTES.POKEMON_DETAIL} exact component={PokemonsDetail} />
-            <Route path={ROUTES.My_Pokemons} exact component={MyPokemonsIndex} />
-            <Route component={NotFound} />
-          </Switch>
-        </Router>
+        <Switch>
+          <Route path={ROUTES.Home} exact component={Home} />
+          <Route path={ROUTES.Pokedex} exact component={PokemonsIndex} />
+          <Route path={ROUTES.POKEMON_DETAIL} exact component={PokemonsDetail} />
+          <Route path={ROUTES.My_Pokemons} exact component={MyPokemonsIndex} />
+          <Route component={NotFound} />
+        </Switch>
       </div>
     </div>
   );
