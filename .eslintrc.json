@@ -10,6 +10,7 @@
     "max-len": ["error", { "code": 100 }],
     "no-shadow": "off",
     "react-hooks/exhaustive-deps": "off",
-    "import/no-cycle": "off"
+    "import/no-cycle": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }
