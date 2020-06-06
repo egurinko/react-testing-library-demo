@@ -29,7 +29,7 @@ export const ROUTES = {
 const App: React.FC<AppProps> = ({ fetchPokemons, snackbar, handleSnackbarClose, classes }) => {
   useEffect(() => {
     fetchPokemons();
-  }, []);
+  }, [fetchPokemons]);
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from 'react-router-dom';
 import { Typography, Grid, Button } from '@material-ui/core';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import {
@@ -70,7 +70,7 @@ const Detail: React.FC<DetailProps> = ({
     return !!myPokemons.find((myPokemon) => myPokemon.id === pokemon?.id);
   };
 
-  return !!pokemon ? (
+  return pokemon ? (
     <div className={classes.container}>
       <Grid container justify="center" className={classes.section}>
         <Hero pokemon={pokemon} />

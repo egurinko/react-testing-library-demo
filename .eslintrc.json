@@ -1,18 +1,6 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "project": "./tsconfig.json",
-    "useJSXTextNode": true
-  },
-  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
-    "airbnb",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "airbnb-typescript-prettier"
   ],
   "env": {
     "browser": true,
@@ -25,6 +13,7 @@
     "prefer-promise-reject-errors": ["off"],
     "react/jsx-filename-extension": ["off"],
     "react/prop-types": ["off"],
-    "no-return-assign": ["off"]
+    "no-return-assign": ["off"],
+    "import/no-cycle": "off"
   }
 }
