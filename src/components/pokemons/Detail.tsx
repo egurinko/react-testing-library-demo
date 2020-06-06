@@ -62,13 +62,13 @@ const Detail: React.FC<DetailProps> = ({
 
   const [isDeletable, setIsDeletable] = useState(true);
 
-  useEffect(() => {
-    setIsDeletable(getIsDeletable());
-  }, [match, myPokemons]);
-
   const getIsDeletable = (): boolean => {
     return !!myPokemons.find((myPokemon) => myPokemon.id === pokemon?.id);
   };
+
+  useEffect(() => {
+    setIsDeletable(getIsDeletable());
+  }, [match, myPokemons]);
 
   return pokemon ? (
     <div className={classes.container}>

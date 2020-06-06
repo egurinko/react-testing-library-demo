@@ -3,17 +3,13 @@
     "airbnb-typescript-prettier"
   ],
   "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
+    "browser": true
   },
   "rules": {
     "prettier/prettier": "error",
     "max-len": ["error", { "code": 100 }],
-    "prefer-promise-reject-errors": ["off"],
-    "react/jsx-filename-extension": ["off"],
-    "react/prop-types": ["off"],
-    "no-return-assign": ["off"],
+    "no-shadow": "off",
+    "react-hooks/exhaustive-deps": "off",
     "import/no-cycle": "off"
   }
 }
