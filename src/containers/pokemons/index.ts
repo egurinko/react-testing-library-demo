@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import * as H from 'history';
 import Index from '../../components/pokemons/Index';
 import { RootThunkAction, RootThunkDispatch } from '../../actions/thunks/thunkTypes';
@@ -21,4 +20,4 @@ const mapDispatchToProps = (dispatch: RootThunkDispatch) => ({
 export type IndexPropsMappedFromState = ReturnType<typeof mapStateToProps>;
 export type IndexPropsMappedFromDispatch = ReturnType<typeof mapDispatchToProps>;
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Index));
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { Typography, Grid, Button } from '@material-ui/core';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import {
@@ -109,4 +109,4 @@ const Detail: React.FC<DetailProps> = ({
   ) : null;
 };
 
-export default withStyles(styles)(Detail);
+export default withRouter(withStyles(styles)(Detail));

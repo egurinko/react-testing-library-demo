@@ -1,5 +1,5 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
 import { Card, CardActionArea, CardContent, Typography, Grid } from '@material-ui/core';
 import {
@@ -47,4 +47,4 @@ const Index: React.FC<IndexProps> = ({ pokemons, onClickGoDetail, classes, histo
   </div>
 );
 
-export default withStyles(styles)(Index);
+export default withRouter(withStyles(styles)(Index));
