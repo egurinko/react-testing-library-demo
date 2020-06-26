@@ -34,7 +34,7 @@ const Index: React.FC<IndexProps> = ({ pokemons, onClickGoDetail, classes, histo
           <Grid item className={classes.card} key={pokemon.name}>
             <Card>
               <CardActionArea onClick={() => onClickGoDetail(pokemon.id, history)}>
-                <img className={classes.image} src={pokemon.sprite!} />
+                <img className={classes.image} src={pokemon.sprite!} alt="pokemonMainImage" />
                 <CardContent>
                   <Typography variant="h5">{pokemon.name}</Typography>
                 </CardContent>

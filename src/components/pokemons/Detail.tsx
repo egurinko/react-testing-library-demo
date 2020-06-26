@@ -45,14 +45,7 @@ type DetailProps = DetailPropsMappedFromState &
 
 type LocalPokemon = Pokemon | null | undefined;
 
-const Detail: React.FC<DetailProps> = ({
-  classes,
-  match,
-  pokemons,
-  myPokemons,
-  addPokemon,
-  deletePokemon,
-}) => {
+const Detail: React.FC<DetailProps> = ({ classes, match, pokemons, addPokemon }) => {
   const [pokemon, setPokemon] = useState<LocalPokemon>(null);
   useEffect(() => {
     const { id } = match.params;
@@ -60,46 +53,16 @@ const Detail: React.FC<DetailProps> = ({
     setPokemon(pokemon);
   }, [match, pokemons]);
 
-  const [isDeletable, setIsDeletable] = useState(true);
-
-  const getIsDeletable = (): boolean => {
-    return !!myPokemons.find((myPokemon) => myPokemon.id === pokemon?.id);
-  };
-
-  useEffect(() => {
-    setIsDeletable(getIsDeletable());
-  }, [match, myPokemons]);
-
   return pokemon ? (
     <div className={classes.container}>
       <Grid container justify="center" className={classes.section}>
         <Hero pokemon={pokemon} />
       </Grid>
-      <Grid container justify="center" className={classes.section}>
-        <Grid container direction="column" className={classes.detailCard}>
-          {pokemon.stats.map((stat) => (
-            <Typography variant="h6" className={classes.detailSection} key={stat.stat.name}>
-              {stat.stat.name} : {stat.base_stat}
-            </Typography>
-          ))}
-        </Grid>
-      </Grid>
-
       <Grid item xs={12} container justify="center" className={classes.section}>
-        <Button
-          color="primary"
-          variant="contained"
-          onClick={() => deletePokemon(pokemon)}
-          disabled={!isDeletable}
-          className={classes.button}
-        >
-          <Typography variant="h5">Delete from My Pokemons</Typography>
-        </Button>
         <Button
           color="secondary"
           variant="contained"
           onClick={() => addPokemon(pokemon)}
-          disabled={myPokemons.length >= 6}
           className={classes.button}
         >
           <Typography variant="h5">Add To My Pokemons</Typography>

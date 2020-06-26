@@ -20,13 +20,13 @@ const styles = (theme: Theme): StyleRules => ({
 type AppProps = AppPropsMappedFromState & AppPropsMappedFromDispatch & WithStyles<typeof styles>;
 
 export const ROUTES = {
-  Home: '/',
-  Pokedex: '/pokemons',
+  HOME: '/',
+  POKEDEX: '/pokemons',
   POKEMON_DETAIL: '/pokemons/:id',
-  My_Pokemons: '/my_pokemons',
+  MY_POKEMONS: '/my_pokemons',
 };
 
-const App: React.FC<AppProps> = ({ fetchPokemons, snackbar, handleSnackbarClose, classes }) => {
+const App: React.FC<AppProps> = ({ fetchPokemons, classes }) => {
   useEffect(() => {
     fetchPokemons();
   }, [fetchPokemons]);
@@ -34,14 +34,12 @@ const App: React.FC<AppProps> = ({ fetchPokemons, snackbar, handleSnackbarClose,
   return (
     <div>
       <CssBaseline />
-      <Loader />
-      <Snackbar snackbar={snackbar} handleClose={handleSnackbarClose} />
       <div className={classes.appContainer}>
         <Switch>
-          <Route path={ROUTES.Home} exact component={Home} />
-          <Route path={ROUTES.Pokedex} exact component={PokemonsIndex} />
+          <Route path={ROUTES.HOME} exact component={Home} />
+          <Route path={ROUTES.POKEDEX} exact component={PokemonsIndex} />
           <Route path={ROUTES.POKEMON_DETAIL} exact component={PokemonsDetail} />
-          <Route path={ROUTES.My_Pokemons} exact component={MyPokemonsIndex} />
+          <Route path={ROUTES.MY_POKEMONS} exact component={MyPokemonsIndex} />
           <Route component={NotFound} />
         </Switch>
       </div>
