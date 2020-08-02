@@ -28,10 +28,10 @@ const Home: React.FC<HomeProps> = ({ classes }) => (
       <Typography variant="h1">Welcome to Pokemon world!</Typography>
     </Grid>
     <Grid item container justify="center">
-      <Link to={ROUTES.Pokedex} className={classes.link}>
+      <Link to={ROUTES.POKEDEX} className={classes.link}>
         <Typography variant="h4">Pokedex</Typography>
       </Link>
-      <Link to={ROUTES.My_Pokemons} className={classes.link}>
+      <Link to={ROUTES.MY_POKEMONS} className={classes.link}>
         <Typography variant="h4">My Pokemons</Typography>
       </Link>
     </Grid>
