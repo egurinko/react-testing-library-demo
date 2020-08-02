@@ -3,7 +3,7 @@ import Index from '../../components/my_pokemons/Index';
 import { RootState } from '../../reducers';
 
 const mapStateToProps = (state: RootState) => ({
-  myPokemons: state.myPokemons,
+  hasPokemons: state.myPokemons.length === 0,
 });
 
 const mapDispatchToProps = () => ({});
