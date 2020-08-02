@@ -1,0 +1,16 @@
+.navbar__container{
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  background-color: hsla(43,21%,94%, 01);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+
+.navbar__menu {
+  display: flex;
+}
+.navbar__menu__link {
+  margin-left: 30px;
+}
