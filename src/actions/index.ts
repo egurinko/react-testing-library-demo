@@ -1,4 +1,4 @@
-import { ActionTypes } from './actionTypes';
+import ActionTypes from './actionTypes';
 import { Pokemons, Pokemon } from './thunks/types/fetchPokemons';
 
 export const fetchPokemonsStart = () =>
@@ -23,9 +23,9 @@ export const addPokemon = (pokemon: Pokemon) =>
     pokemon,
   } as const);
 
-export const deletePokemon = (pokemon: Pokemon) =>
+export const setAddingPokemon = (pokemon: Pokemon) =>
   ({
-    type: ActionTypes.DELETE_POKEMON,
+    type: ActionTypes.SET_ADDING_POKEMON,
     pokemon,
   } as const);
 
@@ -34,4 +34,4 @@ export type Actions =
   | ReturnType<typeof fetchPokemonsSuccess>
   | ReturnType<typeof fetchPokemonsFailure>
   | ReturnType<typeof addPokemon>
-  | ReturnType<typeof deletePokemon>;
+  | ReturnType<typeof setAddingPokemon>;

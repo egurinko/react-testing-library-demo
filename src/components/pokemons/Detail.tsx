@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { Typography, Grid, Button } from '@material-ui/core';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
@@ -6,7 +6,7 @@ import {
   DetailPropsMappedFromState,
   DetailPropsMappedFromDispatch,
 } from '../../containers/pokemons/detail';
-import Hero from './detail/Hero';
+import Hero from '../../containers/pokemons/detail/hero';
 import { Pokemon } from '../../actions/thunks/types/fetchPokemons';
 
 const styles = (theme: Theme): StyleRules => ({
@@ -45,24 +45,32 @@ type DetailProps = DetailPropsMappedFromState &
 
 type LocalPokemon = Pokemon | null | undefined;
 
-const Detail: React.FC<DetailProps> = ({ classes, match, pokemons, addPokemon }) => {
-  const [pokemon, setPokemon] = useState<LocalPokemon>(null);
+const Detail: React.FC<DetailProps> = ({
+  classes,
+  match,
+  pokemons,
+  addingPokemon,
+  addPokemon,
+  setAddingPokemon,
+}) => {
   useEffect(() => {
     const { id } = match.params;
     const pokemon = pokemons.find((pokemon) => pokemon.id === Number(id));
-    setPokemon(pokemon);
+    if (pokemon) {
+      setAddingPokemon(pokemon);
+    }
   }, [match, pokemons]);
 
-  return pokemon ? (
+  return addingPokemon ? (
     <div className={classes.container}>
       <Grid container justify="center" className={classes.section}>
-        <Hero pokemon={pokemon} />
+        <Hero />
       </Grid>
       <Grid item xs={12} container justify="center" className={classes.section}>
         <Button
           color="secondary"
           variant="contained"
-          onClick={() => addPokemon(pokemon)}
+          onClick={() => addPokemon(addingPokemon)}
           className={classes.button}
         >
           <Typography variant="h5">Add To My Pokemons</Typography>
