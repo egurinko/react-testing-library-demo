@@ -1,7 +1,10 @@
 import React from 'react';
 import { Typography, Grid } from '@material-ui/core';
 import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
-import { Pokemon } from '../../../actions/thunks/types/fetchPokemons';
+import {
+  HeroPropsMappedFromDispatch,
+  HeroPropsMappedFromState,
+} from '../../../containers/pokemons/detail/hero';
 
 const styles = (theme: Theme): StyleRules => ({
   heroImage: {
@@ -27,21 +30,17 @@ const styles = (theme: Theme): StyleRules => ({
   },
 });
 
-type OwnProps = {
-  pokemon: Pokemon;
-};
+type HeroProps = HeroPropsMappedFromDispatch & HeroPropsMappedFromState & WithStyles<typeof styles>;
 
-type HeroProps = OwnProps & WithStyles<typeof styles>;
-
-const Hero: React.FC<HeroProps> = ({ classes, pokemon }) => (
+const Hero: React.FC<HeroProps> = ({ classes, addingPokemon }) => (
   <>
-    <img src={pokemon.sprite!} className={classes.heroImage} />
+    <img src={addingPokemon!.sprite!} className={classes.heroImage} />
     <Grid container direction="column" justify="center" className={classes.heroCard}>
       <Typography variant="h4" className={classes.heroId}>
-        No. {pokemon.id}
+        No. {addingPokemon!.id}
       </Typography>
       <Typography variant="h2" className={classes.heroName}>
-        {pokemon.name}
+        {addingPokemon!.name}
       </Typography>
     </Grid>
   </>
