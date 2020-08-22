@@ -2,10 +2,12 @@ import { combineReducers, Action } from 'redux';
 import { Reducer } from 'react';
 import pokemons from './pokemons';
 import myPokemons from './myPokemons';
+import addingPokemon from './addingPokemon';
 
 const rootReducer = combineReducers({
   pokemons,
   myPokemons,
+  addingPokemon,
 });
 
 export default rootReducer;
