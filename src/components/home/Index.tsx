@@ -37,16 +37,13 @@ const Index: React.FC<{}> = () => {
           <h2 className="home__description__title">{description.title}</h2>
           <h4>
             {description.shortened}
-            <button
-              type="button"
-              onClick={() => handleReadMore(index)}
-              className={showFullDescriptions[index] ? 'none' : 'button'}
-            >
-              Read more...
-            </button>
-            <span className={showFullDescriptions[index] ? '' : 'home__description__full'}>
-              {description.full}
-            </span>
+            {showFullDescriptions[index] ? (
+              <span>{description.full}</span>
+            ) : (
+              <button type="button" onClick={() => handleReadMore(index)} className="button">
+                Read more...
+              </button>
+            )}
           </h4>
         </div>
       ))}
