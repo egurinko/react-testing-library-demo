@@ -3,14 +3,14 @@ import { createMuiTheme } from '@material-ui/core/styles';
 export default createMuiTheme({
   palette: {
     primary: {
-      light: 'hsla(40,100%,60%,1)',
-      main: 'hsla(40,100%,40%,1)',
-      dark: 'hsla(40,100%,30%,1)',
+      light: '#FFBB32',
+      main: '#CC8800',
+      dark: '#996500',
     },
     secondary: {
-      light: 'hsla(220,60%,45%,1)',
-      main: 'hsla(220,40%,45%,1)',
-      dark: 'hsla(220,40%,30%,1)',
+      light: '#2D5BB7',
+      main: '#4463A0',
+      dark: '#2D426B',
     },
     text: {
       primary: 'hsla(45,10%,30%,1)',
