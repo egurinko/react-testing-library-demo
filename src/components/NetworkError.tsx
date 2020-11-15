@@ -1,8 +1,8 @@
 import React from 'react';
-import { withStyles, WithStyles, Theme, StyleRules } from '@material-ui/core/styles';
+import { withStyles, WithStyles, StyleRules } from '@material-ui/core/styles';
 import { Typography, Grid } from '@material-ui/core';
 
-const styles = (theme: Theme): StyleRules => ({
+const styles = (): StyleRules => ({
   title: {
     display: 'flex',
     justifyContent: 'center',
