@@ -1,12 +1,15 @@
 import React from 'react';
-import { withStyles, WithStyles, StyleRules } from '@material-ui/core/styles';
+import { withStyles, WithStyles, StyleRules, Theme } from '@material-ui/core/styles';
 import { Typography, Grid } from '@material-ui/core';
 
-const styles = (): StyleRules => ({
+const styles = (theme: Theme): StyleRules => ({
   title: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  pica: {
+    color: theme.palette.primary.light,
   },
   logo: {
     width: 400,
@@ -21,7 +24,9 @@ type NetworkErrorProps = WithStyles<typeof styles>;
 const NetworkError: React.FC<NetworkErrorProps> = ({ classes }) => (
   <Grid container justify="space-around">
     <Grid item xs={6} className={classes.title}>
-      <Typography variant="h1">Pica!!</Typography>
+      <Typography variant="h1" className={classes.pica}>
+        Pica!!
+      </Typography>
     </Grid>
     <Grid item xs={6}>
       <img
