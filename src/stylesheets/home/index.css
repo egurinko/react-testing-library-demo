@@ -1,0 +1,22 @@
+.home {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 100px;
+}
+
+.home_description {
+  font-size: 20px;
+  padding: 10px 200px;
+  text-align: left;
+}
+
+.home__description__title {
+  text-decoration: underline;
+}
+
+.button {
+  color: gray;
+  border: none;
+  font-size: 20px;
+  margin-left: 10px;
+}

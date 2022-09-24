@@ -1,0 +1,26 @@
+.app-container{
+  background-color: hsla(43,21%,94%, 01);
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+.card {
+  height: 300px;
+  width: 230px;
+  margin: 20px;
+  box-shadow: 1px 3px 3px 1px rgba(0,0,0,0.2);
+  background-color: white;
+  display: inline-block;
+}
+
+.card__button {
+  height: inherit;
+  width: inherit;
+  background-color: inherit;
+  padding: 0;
+  border: none;
+}
+
+.card__image {
+  height: 230px;
+}
