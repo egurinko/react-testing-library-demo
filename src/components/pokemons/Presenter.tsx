@@ -17,9 +17,7 @@ interface Props {
 
 const Presenter: React.FC<Props> = ({ pokemons, handleClick }) => (
   <Box mx={5}>
-    <Typography variant="h4" mx="auto">
-      Pokedex
-    </Typography>
+    <Typography variant="h4">Pokedex</Typography>
     <Grid container spacing={4}>
       {pokemons.map((pokemon) => (
         <Grid item xs={3} flexGrow={0} key={pokemon.name}>
