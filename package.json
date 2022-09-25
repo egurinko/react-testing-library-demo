@@ -51,7 +51,7 @@
     "react-router-dom": "^6.4.0",
     "react-spinners": "^0.13.4",
     "redux": "^4.2.0",
-    "redux-devtools-extension": "^2.13.8",
+    "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1"
   }
 }
