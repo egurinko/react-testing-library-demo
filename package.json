@@ -31,7 +31,7 @@
     "eslint-plugin-autofix": "^1.1.0",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.8.4",
-    "style-loader": "^3.3.1",
+    "style-loader": "^3.3.2",
     "typescript": "*",
     "webpack": "^5.76.1",
     "webpack-cli": "^5.0.1",
