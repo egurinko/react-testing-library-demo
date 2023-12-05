@@ -21,7 +21,7 @@
     "@types/node-fetch": "^2.6.9",
     "@types/react": "^18.2.42",
     "@types/react-dom": "^18.2.17",
-    "@types/react-redux": "^7.1.31",
+    "@types/react-redux": "^7.1.32",
     "@types/react-router-dom": "^5.3.3",
     "babel-loader": "^9.1.3",
     "css-loader": "^6.8.1",
