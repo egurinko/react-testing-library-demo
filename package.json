@@ -18,7 +18,7 @@
     "@babel/preset-env": "^7.23.6",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
-    "@types/node-fetch": "^2.6.9",
+    "@types/node-fetch": "^2.6.10",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "@types/react-redux": "^7.1.33",
