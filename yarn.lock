@@ -3267,10 +3267,10 @@ eslint-module-utils@^2.8.0:
   dependencies:
     debug "^3.2.7"
 
-eslint-plugin-autofix@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-autofix/-/eslint-plugin-autofix-2.0.0.tgz#e00c95bf0fb56d6a5e1249ff6a7e5ac2352ee9b4"
-  integrity sha512-o2zxphjl7FdRb8WLSj4r5uyPgA/B20dqIe1Kq+PMZejur5bsJ3OfF3i28ZH2iACs0TtRUyT0XfbD1XNTQ0HUjg==
+eslint-plugin-autofix@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-autofix/-/eslint-plugin-autofix-2.1.0.tgz#5f4750b36fca0da9d3eae3e756e67f814f80f902"
+  integrity sha512-4ya5flaJ7P+s4WeCe7mVd5Mmv0ayghl9Xz1MDewQqDNXn3SFkvTMqbCuJT5fsTl+BdtJ/CFNV48YrABohQu1VQ==
   dependencies:
     eslint-rule-composer "^0.3.0"
     espree "^9.0.0"
