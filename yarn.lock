@@ -2396,7 +2396,7 @@ braces@^3.0.3, braces@~3.0.2:
   dependencies:
     fill-range "^7.1.1"
 
-browserslist@^4.21.10, browserslist@^4.23.0, browserslist@^4.23.1:
+browserslist@^4.21.10, browserslist@^4.23.1, browserslist@^4.23.3:
   version "4.23.3"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.23.3.tgz#debb029d3c93ebc97ffbc8d9cbb03403e227c800"
   integrity sha512-btwCFJVjI4YWDNfau8RhZ+B1Q/VLoUITrm3RlP6y1tYGWIOa+InuYiRGXUBXo8nA1qKmHMyLB/iVQg5TT4eFoA==
@@ -2639,11 +2639,11 @@ cookie@0.6.0:
   integrity sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==
 
 core-js-compat@^3.36.1, core-js-compat@^3.37.1:
-  version "3.37.1"
-  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.37.1.tgz#c844310c7852f4bdf49b8d339730b97e17ff09ee"
-  integrity sha512-9TNiImhKvQqSUkOvk/mMRZzOANTiEVC7WaBNhHcKM7x+/5E1l5NvsysR19zuDQScE8k+kfQXWRN3AtS/eOSHpg==
+  version "3.38.0"
+  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.38.0.tgz#d93393b1aa346b6ee683377b0c31172ccfe607aa"
+  integrity sha512-75LAicdLa4OJVwFxFbQR3NdnZjNgX6ILpVcVzcC4T2smerB5lELMrJQQQoWV6TiuC/vlaFqgU2tKQx9w5s0e0A==
   dependencies:
-    browserslist "^4.23.0"
+    browserslist "^4.23.3"
 
 core-util-is@~1.0.0:
   version "1.0.3"
