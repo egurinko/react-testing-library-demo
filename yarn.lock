@@ -3185,15 +3185,14 @@ eslint-module-utils@^2.8.0:
   dependencies:
     debug "^3.2.7"
 
-eslint-plugin-autofix@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-autofix/-/eslint-plugin-autofix-2.1.0.tgz#5f4750b36fca0da9d3eae3e756e67f814f80f902"
-  integrity sha512-4ya5flaJ7P+s4WeCe7mVd5Mmv0ayghl9Xz1MDewQqDNXn3SFkvTMqbCuJT5fsTl+BdtJ/CFNV48YrABohQu1VQ==
+eslint-plugin-autofix@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-autofix/-/eslint-plugin-autofix-2.2.0.tgz#afe77d47f2790c45561edeedde039ed2e1009392"
+  integrity sha512-lu8+0r+utyTroROqXIL+a8sUpICi6za22hIzlpb0+x0tQGRnOjhOKU7v8mC/NS/faDoVsw6xW3vUpc+Mcz5NWA==
   dependencies:
     eslint-rule-composer "^0.3.0"
     espree "^9.0.0"
     esutils "^2.0.2"
-    lodash "^4.17.20"
     string-similarity "^4.0.3"
 
 eslint-plugin-flowtype@^8.0.3:
