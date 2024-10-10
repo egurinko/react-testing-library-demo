@@ -14,8 +14,8 @@
     "format": "yarn lint --fix & yarn prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.7",
-    "@babel/preset-env": "^7.25.7",
+    "@babel/core": "^7.25.8",
+    "@babel/preset-env": "^7.25.8",
     "@babel/preset-react": "^7.25.7",
     "@babel/preset-typescript": "^7.25.7",
     "@types/node-fetch": "^2.6.11",
