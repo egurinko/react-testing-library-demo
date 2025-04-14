@@ -4949,10 +4949,10 @@ react-router@6.30.0:
   dependencies:
     "@remix-run/router" "1.23.0"
 
-react-spinners@^0.13.6:
-  version "0.13.8"
-  resolved "https://registry.yarnpkg.com/react-spinners/-/react-spinners-0.13.8.tgz#5262571be0f745d86bbd49a1e6b49f9f9cb19acc"
-  integrity sha512-3e+k56lUkPj0vb5NDXPVFAOkPC//XyhKPJjvcGjyMNPWsBKpplfeyialP74G7H7+It7KzhtET+MvGqbKgAqpZA==
+react-spinners@^0.16.1:
+  version "0.16.1"
+  resolved "https://registry.yarnpkg.com/react-spinners/-/react-spinners-0.16.1.tgz#06832db2ae96d6a3f4997dbbce28c7ef7aa357ca"
+  integrity sha512-hYDQp2mmmv3a3JZZZYOi3+jW7C/ro51Ny71TfkRXhoPBb6wZuK9BgdvYbTnSAUrQCrVnOLSpWfZatncUTb6n5w==
 
 react-transition-group@^4.4.5:
   version "4.4.5"
