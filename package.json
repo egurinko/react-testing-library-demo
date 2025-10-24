@@ -14,10 +14,10 @@
     "format": "yarn lint --fix & yarn prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.4",
-    "@babel/preset-env": "^7.28.3",
-    "@babel/preset-react": "^7.27.1",
-    "@babel/preset-typescript": "^7.27.1",
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
     "@types/node-fetch": "^2.6.13",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
