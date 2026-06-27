@@ -33,7 +33,7 @@
     "prettier": "^3.8.5",
     "style-loader": "^4.0.0",
     "typescript": "*",
-    "webpack": "^5.108.0",
+    "webpack": "^5.108.1",
     "webpack-cli": "^7.0.3",
     "webpack-dev-server": "^5.2.5"
   },
